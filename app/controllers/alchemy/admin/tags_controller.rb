@@ -6,7 +6,7 @@ module Alchemy
       def index
         @tags = ActsAsTaggableOn::Tag.where(
           "name LIKE '%#{params[:query]}%'"
-        ).page(params[:page] || 1).per(per_page_value_for_screen_size).order("name ASC")
+        ).paginate(page: params[:page], per_page: per_page_value_for_screen_size)
       end
 
       def new
