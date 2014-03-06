@@ -69,7 +69,7 @@ module Alchemy
     class << self
 
       def find_paginated(params, per_page)
-        Picture.named(params[:query]).paginate(page: params[:page], per_page_value_for_screen_size)
+        Picture.named(params[:query]).paginate(page: params[:page], per_page: per_page_value_for_screen_size)
       end
 
       def last_upload
