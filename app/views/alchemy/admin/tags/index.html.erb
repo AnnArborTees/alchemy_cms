@@ -17,7 +17,7 @@
 
 <div id="archive_all">
   <h1>
-    <%= @tags.total_count %>
+    <%= @tags.count %>
     <%= ActsAsTaggableOn::Tag.model_name.human(count: @tags.count) %>
   </h1>
   <% if @tags.any? %>
