@@ -36,7 +36,8 @@ module Alchemy
         items = items.order(sort_order)
         respond_to do |format|
           format.html {
-            items = items.page(params[:page] || 1).per(per_page_value_for_screen_size)
+            items = items.paginate(page: params[:page], per_page: per_page_value_for_screen_size)
+            #items = items.page(params[:page] || 1).per(per_page_value_for_screen_size)
             instance_variable_set("@#{resource_handler.resources_name}", items)
           }
           format.csv {
