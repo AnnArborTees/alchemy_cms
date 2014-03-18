@@ -29,7 +29,7 @@
         <%= link_to(page_for_links.name, '', {
           data: {
             'page-id' => page_for_links.id,
-            url: @url_prefix + page_for_links.urlname
+             url: alchemy.root_path.sub('/', '') + @url_prefix + page_for_links.urlname
           },
           title: _t('page_for_links.choose_page', name: page_for_links.name),
           class: "sitemap_pagename_link"
